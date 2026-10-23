@@ -1,5 +1,7 @@
 # Drive Hub
 
+![Drive Hub logo](free-drive-hub-mark.svg)
+
 **Join any number of Google Drive accounts into one drive you host yourself.** Browse, search and upload across all of them from a web app on any device, or mount everything as a single network drive on Windows, macOS and Linux.
 
 Five free Google accounts give you 75 GB in one place. New uploads automatically go to the account with the most free space.
@@ -104,6 +106,19 @@ Create an app password under **Settings → App passwords**. Then connect to `<y
 - **Phones:** any WebDAV file manager, or add the web app to your home screen
 
 ## How it works
+
+```mermaid
+flowchart LR
+    A[Web app or WebDAV client] --> B[Drive Hub server]
+    B --> C[Encrypted token and account settings]
+    B --> D[Merge folder listings]
+    D --> E[Google Drive accounts]
+    B --> F[Place upload by available space]
+    F --> E
+    E --> G[Unified files and quota]
+    G --> A
+```
+
 
 ```
  browser / WebDAV client ──HTTPS──► Drive Hub (your server) ──Drive API──► Google account 1
