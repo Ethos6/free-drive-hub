@@ -1,24 +1,23 @@
-# Version-update pull requests are off (open-pull-requests-limit: 0). Security updates still apply.
+# Keeps dependencies current: monthly pull requests for Python packages,
+# GitHub Actions and the Docker base image.
 version: 2
 updates:
   - package-ecosystem: pip
-    open-pull-requests-limit: 0
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
+    open-pull-requests-limit: 5
     groups:
       python-dependencies:
         patterns: ["*"]
   - package-ecosystem: github-actions
-    open-pull-requests-limit: 0
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
     groups:
       actions:
         patterns: ["*"]
   - package-ecosystem: docker
-    open-pull-requests-limit: 0
     directory: /
     schedule:
-      interval: weekly
+      interval: monthly
